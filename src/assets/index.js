@@ -42,8 +42,38 @@ import comicify_ai from "./comicify-ai.png";
 import greentrust from "./green_trust.png";
 import averlon from "./averlon.jpg";
 import devfolio from "./devfolio.png";
+import SmartKnower from "./SmartKnower.png";
+import GVN from "./gvn.jpg";
+import Charity from "./charity.png";
+import Reetesh from "./Reetesh.png";
+import wagerwheels from "./wagerwheels.png";
+import leafDiseaseDetection from "./leafDiseaseDetection.png";
+import farmAssists from "./farmAssists.jpg";
+import RbAllocation from "./RbAllocation.png";
+import LTE from "./lte.png";
+import Bloggin from "./Bloggin.png";
+import Rbus from "./r bus.png";
+import Wec from "./WEC.png";
+import Profile from "./profile.png";
+import ReeteshGIF from "./Reetesh.gif";
+import IET from "./IET.png";
 
 export {
+  IET,
+  ReeteshGIF,
+  Profile,
+  Wec,
+  Rbus,
+  Bloggin,
+  LTE,
+  RbAllocation,
+  farmAssists,
+  leafDiseaseDetection,
+  wagerwheels,
+  Reetesh,
+  GVN,
+  Charity,
+  SmartKnower,
   quotes,
   robot,
   send,

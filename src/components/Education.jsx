@@ -19,8 +19,7 @@ const FeatureCard = ({
   title,
   degree,
   duration,
-  content1,
-  content2,
+  content,
   index,
 }) => (
   <div
@@ -42,12 +41,11 @@ const FeatureCard = ({
       <p className="font-poppins font-normal text-dimWhite text-[14px] leading-[30px] mb-1">
         {duration}
       </p>
-      <p className="font-poppins font-normal text-dimWhite text-[16px] leading-[30px] mb-1">
-        - {content1}
-      </p>
-      <p className="font-poppins font-normal text-dimWhite text-[16px] leading-[30px] mb-1">
-        - {content2}
-      </p>
+      {content.map((content,index)=>(
+         <p className="font-poppins font-normal text-dimWhite text-[16px] leading-[30px] mb-1">
+         - {content}
+         </p>
+      ))}
     </div>
   </div>
 );

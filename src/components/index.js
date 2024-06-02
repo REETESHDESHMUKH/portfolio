@@ -13,7 +13,6 @@ import Stats from "./Stats";
 import Loading from "./Loading";
 import BlogPosts from "./BlogPosts";
 
-
 export {
     Navbar,
     Hero,
