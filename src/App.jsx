@@ -9,10 +9,9 @@ import {
   SkillsAndExperience,
   ExtraCurricular,
   Footer,
-  OpenSource,
   Projects,
-  BlogPosts,
-  Loading
+  Loading,
+  CodingProfile
 } from "./components";
 
 const App = () => {
@@ -56,6 +55,7 @@ const App = () => {
             <Projects />
             {/* <BlogPosts enabled={false} />
             <OpenSource /> */}
+            <CodingProfile/>
             <ExtraCurricular />
           </div>
         </div>

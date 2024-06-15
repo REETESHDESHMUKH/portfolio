@@ -57,8 +57,10 @@ import Wec from "./WEC.png";
 import Profile from "./profile.png";
 import ReeteshGIF from "./Reetesh.gif";
 import IET from "./IET.png";
+import Atcoder from "./Atcoder.png";
 
 export {
+  Atcoder,
   IET,
   ReeteshGIF,
   Profile,

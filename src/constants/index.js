@@ -1,3 +1,4 @@
+
 import {
   nitk,
   cluboard,
@@ -66,20 +67,7 @@ import {
   SiMysql,
   SiSolidity,
   SiNetlify,
-  SiChartdotjs,
-  SiVite,
-  SiArduino,
   SiWeb3Dotjs,
-  SiIpfs,
-  SiDotnet,
-  SiTwilio,
-  SiFlutter,
-  SiReplit,
-  SiFlask,
-  SiFigma,
-  SiGooglemaps,
-  SiOpenai,
-  SiGooglecloud,
   SiNextdotjs,
   SiMicrosoftazure,
   SiTypescript,
@@ -98,20 +86,14 @@ import {
   SiNodedotjs,
   SiHtml5,
   SiCss3,
+  SiLeetcode,
+  SiCodechef,
+  SiCodeforces,
 } from "react-icons/si";
 
 import {
-  FaHardHat,
-  FaRust
+  FaHardHat
 } from "react-icons/fa";
-
-import {
-  IoIosNotificationsOutline
-} from "react-icons/io";
-
-import {
-  FaGolang
-} from "react-icons/fa6";
 
 import { DiCss3, DiJava, DiMsqlServer, DiRuby } from "react-icons/di";
 import { TbNetwork } from "react-icons/tb";
@@ -134,10 +116,10 @@ export const navLinks = [
     id: "projects",
     title: "Projects",
   },
-//   {
-//     id: "openSource",
-//     title: "Open Source",
-//   },
+  {
+    id: "codingProfiles",
+    title: "Coding Profiles",
+  },
   {
     id: "extraCurricular",
     title: "Extra Curricular",
@@ -824,11 +806,6 @@ export const projects = [
   }
 ];
 
-export const blogPosts = [
-];
-
-export const stats = [
-];
 
 export const extraCurricular = [
   {
@@ -845,7 +822,7 @@ export const extraCurricular = [
   },
   {
     organisation: "The Institute of Engineering Technology, NITK",
-    title: "Executive Member",
+    title: "Executive Member of Cipher Sig",
     duration: "Aug 2022 - Apr 2024",
     content: [
       {
@@ -856,6 +833,94 @@ export const extraCurricular = [
     logo: IET,
   },
 ];
+
+const get_codeforces_user_info = async (handle) => {
+    const url = `https://codeforces.com/api/user.info?handles=${handle}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const userInfo = data.result[0];
+        return {
+            id: "coding-profile-1",
+            platform: "Codeforces",
+            username: handle,
+            icon: SiCodeforces,
+            rating: userInfo.maxRating,
+            rank: userInfo.rank,
+            totalSolved: 332
+        };
+    } catch (error) {
+        alert(`error: ${error}`)
+    }
+}
+
+const get_leetcode_user_info = async (handle) => {
+    const url = `https://leetcode-stats-api.herokuapp.com/${handle}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return {
+            id: "coding-profile-2",
+            platform: "Leetcode",
+            username: handle,
+            icon: SiLeetcode,
+            rating: 1728,
+            rank: data.ranking,
+            totalSolved: data.totalSolved,
+            easySolved: data.easySolved,
+            mediumSolved: data.mediumSolved,
+            hardSolved: data.hardSolved,
+            acceptanceRate: data.acceptanceRate
+        };
+    } catch (error) {
+        console.error('Error fetching LeetCode user info:', error);
+    }
+}
+
+const get_codechef_user_info = async (handle) => {
+    const url = `https://codechef-api.vercel.app/${handle}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return {
+            id: "coding-profile-3",
+            platform: "CodeChef",
+            username: handle,
+            icon: SiCodechef,
+            rating: data.highestRating,
+            rank: data.stars,
+            totalSolved: 56,
+        };
+    } catch (error) {
+        console.error('Error fetching LeetCode user info:', error);
+    }
+}
+
+export const getCodingProfile = async () => {
+    const codeforcesProfile = await get_codeforces_user_info("SKYRIX_rd");
+    const leetcodeProfile = await get_leetcode_user_info("skyrix_rd");
+    const codechefProfile = await get_codechef_user_info("skyrix");
+
+    return [
+        codeforcesProfile,
+        leetcodeProfile,
+        codechefProfile,
+        {
+            id: "coding-profile-4",
+            platform: "Atcoder",
+            username: "SKYRIX_rd",
+            icon: SiCodechef,
+            currentRating: 197,
+            rating: 197,
+            rank: "gray",
+            totalSolved: 50
+        }
+    ];
+};
+
+
+export const stats = []
+export const blogPosts = []
 
 export const socialMedia = [
   {
